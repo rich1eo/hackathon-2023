@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "target": "node",
@@ -16,9 +14,7 @@
         "outputPath": "dist/apps/back-end",
         "main": "apps/back-end/src/main.ts",
         "tsConfig": "apps/back-end/tsconfig.app.json",
-        "assets": [
-          "apps/back-end/src/assets"
-        ],
+        "assets": ["apps/back-end/src/assets"],
         "isolatedConfig": true,
         "webpackConfig": "apps/back-end/webpack.config.js"
       },
@@ -44,29 +40,9 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/back-end/**/*.ts"
-        ]
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
-      "options": {
-        "jestConfig": "apps/back-end/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "lintFilePatterns": ["apps/back-end/**/*.ts"]
       }
     }
   },
