@@ -7,7 +7,8 @@
     "dev:web": "nx serve front-end",
     "build:api": "nx build back-end",
     "build:web": "nx build front-end",
-    "pretty:fix": "prettier --write ."
+    "pretty:fix": "prettier --write .",
+    "lint": "nx run-many --target=lint --all --parallel"
   },
   "private": true,
   "devDependencies": {
@@ -40,6 +41,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "jsdom": "~22.1.0",
     "nx": "17.0.3",
     "prettier": "^2.6.2",
