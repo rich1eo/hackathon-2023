@@ -6,7 +6,8 @@
     "dev:api": "nx serve back-end",
     "dev:web": "nx serve front-end",
     "build:api": "nx build back-end",
-    "build:web": "nx build front-end"
+    "build:web": "nx build front-end",
+    "pretty:fix": "prettier --write ."
   },
   "private": true,
   "devDependencies": {
