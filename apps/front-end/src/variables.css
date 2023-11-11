@@ -1,0 +1,8 @@
+:root {
+  /* Z-индексы */
+  --modal-index: 10;
+
+  /* Цвета */
+  --overlay-color: rgba(0 0 0 / 60%);
+  --text-color: #7777;
+}
