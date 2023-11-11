@@ -1,12 +1,28 @@
+interface WeaponProps {
+  name: string
+  damage: number
+  accuracy: number
+  damageType: DamageType
+}
+
+enum DamageType {
+  ATTENTION = 'ATTENTION',
+  CARE = 'CARE',
+  PATIENCE = 'PATIENCE',
+  UNDERSTANDING = 'UNDERSTANDING',
+}
+
 export class Weapon {
   name: string
   damage: number
   accuracy: number
+  damageType: DamageType
 
-  constructor(name: string, damage: number = 1, accuracy: number = 1) {
+  constructor({ name, damage, accuracy, damageType }: WeaponProps) {
     this.name = name
     this.damage = damage
     this.accuracy = accuracy
+    this.damageType = damageType
   }
 
   upgradeDamage() {
