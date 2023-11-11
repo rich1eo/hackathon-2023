@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js'
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { Weapon } from '@hackathon-2023/client/features/weapon'
@@ -21,6 +21,8 @@ interface GameProps {
 
 export const Game = memo(
   ({ enemies, points, weapon, handleAddPoints, handleKillEnemy, handleSetEnemies }: GameProps) => {
+    const textStyle = useMemo(() => new PIXI.TextStyle({ stroke: '#01d27e' }), [])
+
     return (
       <div className={styles.game}>
         <Stage options={{ backgroundColor: '#6a6a6c' }} width={1180} height={600}>
@@ -35,15 +37,7 @@ export const Game = memo(
           <Boxes />
 
           <Container x={30} y={550}>
-            <Text
-              style={
-                new PIXI.TextStyle({
-                  stroke: '#01d27e',
-                })
-              }
-              text={`Баллы: ${points.toString()}`}
-              anchor={{ x: 0, y: 0.5 }}
-            />
+            <Text style={textStyle} text={`Баллы: ${points.toString()}`} anchor={{ x: 0, y: 0.5 }} />
           </Container>
         </Stage>
       </div>

@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 
 import { Sprite } from '@pixi/react'
 
@@ -20,18 +20,21 @@ const coordinates = [
 ]
 
 export const Boxes = memo(() => {
-  const boxes = coordinates.map((coordinate, index) => {
-    return (
-      <Sprite
-        key={index}
-        image={boxImage}
-        eventMode="static"
-        width={180}
-        height={140}
-        x={coordinate.x}
-        y={coordinate.y}
-      />
-    )
-  })
+  const boxes = useMemo(
+    () =>
+      coordinates.map((coordinate) => (
+        <Sprite
+          key={`${coordinate.x}-${coordinate.y}`}
+          image={boxImage}
+          eventMode="static"
+          width={180}
+          height={140}
+          x={coordinate.x}
+          y={coordinate.y}
+        />
+      )),
+    [],
+  )
+
   return <>{boxes}</>
 })

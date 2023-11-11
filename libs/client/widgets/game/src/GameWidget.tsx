@@ -23,20 +23,30 @@ export const GameWidget = memo(() => {
     dispatch({ type: 'ADD_POINTS', payload: point })
   }, [])
 
-  const handleKillEnemy = useCallback((name: string) => {
-    setTimeout(() => {
-      dispatch({ type: 'DELETE_ENEMY', payload: name })
-    }, 1500)
-    setTimeout(() => {
-      dispatch({ type: 'ADD_ENEMY', payload: name })
-    }, 1600)
+  const handleDeleteEnemy = useCallback((name: string) => {
+    dispatch({ type: 'DELETE_ENEMY', payload: name })
   }, [])
+
+  const handleAddEnemy = useCallback((name: string) => {
+    dispatch({ type: 'ADD_ENEMY', payload: name })
+  }, [])
+
+  const handleKillEnemy = useCallback(
+    (name: string) => {
+      const deleteTimeout = setTimeout(() => handleDeleteEnemy(name), 1500)
+      const addTimeout = setTimeout(() => handleAddEnemy(name), 1600)
+
+      return () => {
+        clearTimeout(deleteTimeout)
+        clearTimeout(addTimeout)
+      }
+    },
+    [handleDeleteEnemy, handleAddEnemy],
+  )
 
   const handleSetEnemies = useCallback((enemies: Enemy[]) => {
     dispatch({ type: 'SET_ENEMIES', payload: enemies })
   }, [])
-
-  console.log(state.enemies)
 
   return (
     <Game

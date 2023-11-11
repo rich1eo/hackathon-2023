@@ -26,7 +26,7 @@ export const EnemySprite = memo(({ weapon, enemy, onPointsAdded, onKilled }: Ene
       onKilled?.(enemy.name)
       setWasDefeated(true)
     }
-  }, [weapon, enemy, onPointsAdded])
+  }, [weapon, enemy.isDefeated, enemy.points, enemy.name, onPointsAdded, onKilled, wasDefeated])
 
   const getDelta = useCallback(
     (count: number) => {

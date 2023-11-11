@@ -3,8 +3,8 @@ import { memo, useEffect, useMemo } from 'react'
 import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { Weapon } from '@hackathon-2023/client/features/weapon'
 
-import { EnemySprite } from '../EnemySprite/EnemySprite'
 import { enemiesByName } from '../../../data/enemies'
+import { EnemySprite } from '../EnemySprite/EnemySprite'
 
 interface EnemiesProps {
   handleSetEnemies: (enemies: Enemy[]) => void
@@ -15,7 +15,7 @@ interface EnemiesProps {
 }
 
 export const Enemies = memo(
-  ({ handleSetEnemies, handleKillEnemy, handleAddPoints, stateEnemies, weapon }: EnemiesProps) => {
+  ({ handleSetEnemies, stateEnemies, handleKillEnemy, handleAddPoints, weapon }: EnemiesProps) => {
     const initialEnemies = useMemo(() => Object.values(enemiesByName), [])
 
     useEffect(() => {
@@ -27,10 +27,10 @@ export const Enemies = memo(
         {stateEnemies.map((enemy) => (
           <EnemySprite
             key={enemy.name}
+            enemy={enemy}
+            weapon={weapon}
             onKilled={handleKillEnemy}
             onPointsAdded={handleAddPoints}
-            weapon={weapon}
-            enemy={enemy}
           />
         ))}
       </>
