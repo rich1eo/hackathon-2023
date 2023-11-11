@@ -19,7 +19,7 @@
       "@hackathon-2023/client/features/weapon": ["libs/client/features/weapon/src/index.ts"],
       "@hackathon-2023/client/pages/finish": ["libs/client/pages/finish/src/index.ts"],
       "@hackathon-2023/client/pages/main": ["libs/client/pages/main/src/index.ts"],
-      "@hackathon-2023/client/pages/start": ["libs/client/pages/start/src/index.ts"],
+      "@hackathon-2023/client/pages/game": ["libs/client/pages/game/src/index.ts"],
       "@hackathon-2023/client/uikit": ["libs/client/uikit/src/index.ts"]
     }
   },
