@@ -5,7 +5,7 @@ interface WeaponProps {
   damageType: DamageType
 }
 
-enum DamageType {
+export enum DamageType {
   ATTENTION = 'ATTENTION',
   CARE = 'CARE',
   PATIENCE = 'PATIENCE',

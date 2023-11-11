@@ -1,1 +1,1 @@
-export { Weapon } from './model/weapon'
+export { Weapon, DamageType } from './model/weapon'
