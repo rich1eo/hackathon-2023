@@ -1,4 +1,4 @@
-import { GamemodeProvider, PointsProvider } from '@hackathon-2023/client/features/game-context'
+import { GamemodeProvider, PointsProvider, WeaponProvider } from '@hackathon-2023/client/features/game-context'
 
 import { AppRouter } from './providers/router'
 
@@ -8,9 +8,11 @@ export function App() {
   return (
     <div className={styles.App}>
       <GamemodeProvider>
-        <PointsProvider>
-          <AppRouter />
-        </PointsProvider>
+        <WeaponProvider>
+          <PointsProvider>
+            <AppRouter />
+          </PointsProvider>
+        </WeaponProvider>
       </GamemodeProvider>
     </div>
   )

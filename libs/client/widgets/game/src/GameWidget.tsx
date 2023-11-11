@@ -2,7 +2,7 @@ import { memo, Reducer, useCallback, useContext, useEffect, useMemo, useReducer,
 import { useNavigate } from 'react-router-dom'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
-import { GamemodeContext, Gamemods, PointsContext } from '@hackathon-2023/client/features/game-context'
+import { GamemodeContext, Gamemods, PointsContext, WeaponContext } from '@hackathon-2023/client/features/game-context'
 import { UnderstandingWeapon } from '@hackathon-2023/client/features/weapon'
 
 import { reducer } from './data/reducer'
@@ -25,7 +25,7 @@ export const GameWidget = memo(() => {
 
   const [state, dispatch] = useReducer<Reducer<State, Action>>(reducer, initialState)
 
-  const weapon = new UnderstandingWeapon()
+  const { weapon } = useContext(WeaponContext)
 
   const handleAddPoints = useCallback((point: number) => {
     addPoints(point)
