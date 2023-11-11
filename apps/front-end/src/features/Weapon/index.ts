@@ -1,1 +1,5 @@
 export { Weapon, DamageType } from './model/weapon'
+export { AirWeapon } from './model/airWeapon'
+export { EarthWeapon } from './model/earthWeapon'
+export { FireWeapon } from './model/fireWeapon'
+export { WaterWeapon } from './model/waterWeapon'
