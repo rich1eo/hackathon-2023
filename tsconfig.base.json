@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hackathon-2023/client/features/enemy": ["libs/client/features/enemy/src/index.ts"]
+      "@hackathon-2023/client/features/enemy": ["libs/client/features/enemy/src/index.ts"],
+      "@hackathon-2023/client/features/weapon": ["libs/client/features/weapon/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
