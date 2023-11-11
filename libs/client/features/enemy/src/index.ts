@@ -1,0 +1,5 @@
+export { Enemy } from './model/enemy'
+export { SimpleAirEnemy, FastAirEnemy, StrongAirEnemy } from './model/airEnemies'
+export { SimpleEarthEnemy, FastEarthEnemy, StrongEarthEnemy } from './model/earthEnemies'
+export { SimpleFireEnemy, FastFireEnemy, StrongFireEnemy } from './model/fireEnemies'
+export { SimpleWaterEnemy, FastWaterEnemy, StrongWaterEnemy } from './model/waterEnemies'
