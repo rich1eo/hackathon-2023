@@ -1,34 +1,10 @@
 import { memo, useEffect, useMemo } from 'react'
 
-import {
-  AdultsEnemy,
-  BeingRidiculedEnemy,
-  BetrayalEnemy,
-  DarknessEnemy,
-  DoctorsEnemy,
-  Enemy,
-  GuardianshipEnemy,
-  LonelinessEnemy,
-  MomDisappearEnemy,
-  NewPlacesEnemy,
-  UnusualEnemy,
-  ViolenceEnemy,
-} from '@hackathon-2023/client/features/enemy'
+import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { Weapon } from '@hackathon-2023/client/features/weapon'
 
 import { EnemySprite } from '../EnemySprite/EnemySprite'
-
-const violenceEnemy = new ViolenceEnemy()
-const darknessEnemy = new DarknessEnemy()
-const betrayalEnemy = new BetrayalEnemy()
-const unusualEnemy = new UnusualEnemy()
-const guardianshipEnemy = new GuardianshipEnemy()
-const beingRidiculedEnemy = new BeingRidiculedEnemy()
-const doctorsEnemy = new DoctorsEnemy()
-const adultsEnemy = new AdultsEnemy()
-const newPlacesEnemy = new NewPlacesEnemy()
-const momDisappearEnemy = new MomDisappearEnemy()
-const lonelinessEnemy = new LonelinessEnemy()
+import { enemiesByName } from '../../../data/enemies'
 
 interface EnemiesProps {
   handleSetEnemies: (enemies: Enemy[]) => void
@@ -40,22 +16,7 @@ interface EnemiesProps {
 
 export const Enemies = memo(
   ({ handleSetEnemies, handleKillEnemy, handleAddPoints, stateEnemies, weapon }: EnemiesProps) => {
-    const initialEnemies = useMemo(
-      () => [
-        violenceEnemy,
-        darknessEnemy,
-        betrayalEnemy,
-        unusualEnemy,
-        guardianshipEnemy,
-        beingRidiculedEnemy,
-        doctorsEnemy,
-        adultsEnemy,
-        newPlacesEnemy,
-        momDisappearEnemy,
-        lonelinessEnemy,
-      ],
-      [],
-    )
+    const initialEnemies = useMemo(() => Object.values(enemiesByName), [])
 
     useEffect(() => {
       handleSetEnemies(initialEnemies)

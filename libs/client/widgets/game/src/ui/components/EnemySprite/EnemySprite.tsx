@@ -1,5 +1,5 @@
 import { AlphaFilter } from 'pixi.js'
-import { memo, useCallback, useRef,useState } from 'react'
+import { memo, useCallback, useRef, useState } from 'react'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { Weapon } from '@hackathon-2023/client/features/weapon'
@@ -56,19 +56,19 @@ export const EnemySprite = memo(({ weapon, enemy, onPointsAdded, onKilled }: Ene
 
   return (
     <Sprite
-        alpha={alpha}
-        eventMode="static"
-        cursor="pointer"
-        interactive={true}
-        ontap={onSpriteClick}
-        onclick={onSpriteClick}
-        width={!wasDefeated ? 145 : 155}
-        height={135}
-        filters={!enemy.isDamaged ? [] : [new AlphaFilter(0.3)]}
-        image={!wasDefeated ? enemy.image : enemy.defeatedImage}
-        x={!wasDefeated ? enemy.x : enemy.x - 5}
-        y={yMovement}
-        anchor={0}
-      />
+      alpha={alpha}
+      eventMode="static"
+      cursor="pointer"
+      interactive={true}
+      ontap={onSpriteClick}
+      onclick={onSpriteClick}
+      width={!wasDefeated ? 145 : 155}
+      height={135}
+      filters={!enemy.isDamaged ? [] : [new AlphaFilter(0.3)]}
+      image={!wasDefeated ? enemy.image : enemy.defeatedImage}
+      x={!wasDefeated ? enemy.x : enemy.x - 5}
+      y={yMovement}
+      anchor={0}
+    />
   )
 })

@@ -27,6 +27,9 @@ export const GameWidget = memo(() => {
     setTimeout(() => {
       dispatch({ type: 'DELETE_ENEMY', payload: name })
     }, 1500)
+    setTimeout(() => {
+      dispatch({ type: 'ADD_ENEMY', payload: name })
+    }, 1600)
   }, [])
 
   const handleSetEnemies = useCallback((enemies: Enemy[]) => {

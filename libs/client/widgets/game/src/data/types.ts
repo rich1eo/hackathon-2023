@@ -12,7 +12,7 @@ export type Action =
     }
   | {
       type: 'ADD_ENEMY'
-      payload: Enemy
+      payload: string
     }
   | {
       type: 'ADD_POINTS'

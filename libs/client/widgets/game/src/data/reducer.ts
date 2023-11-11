@@ -1,3 +1,4 @@
+import { enemiesByName, enemiesFactory } from './enemies'
 import { Action, State } from './types'
 
 export const reducer = (state: State, action: Action) => {
@@ -10,7 +11,7 @@ export const reducer = (state: State, action: Action) => {
     case 'ADD_ENEMY':
       return {
         ...state,
-        enemies: [...state.enemies, action.payload],
+        enemies: [...state.enemies, enemiesFactory[action.payload]()],
       }
     case 'ADD_POINTS':
       return {
