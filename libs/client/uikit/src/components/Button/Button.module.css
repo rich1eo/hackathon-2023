@@ -11,12 +11,13 @@
   }
 }
 
-// Theme
+/* Theme */
+
 .green {
   background-color: var(--color-green);
 }
 
-// Size
+/* Size */
 
 .size_l {
   font-weight: 800;

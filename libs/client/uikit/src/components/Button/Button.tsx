@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 
 import { classNames } from '../../lib/classNames/classNames'
 
-import styles from './Button.module.scss'
+import styles from './Button.module.css'
 
 export enum ButtonTheme {
   Primary = 'primary',

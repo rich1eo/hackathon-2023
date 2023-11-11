@@ -7,23 +7,22 @@ import styles from './StartPage.module.css'
 /* eslint-disable-next-line */
 export interface StartPageProps {}
 
-// TODO: перенести в стейт менеджер
 const timeMods = [
   {
     label: '00:30',
-    time: '30000',
+    time: 30000,
   },
   {
     label: '01:00',
-    time: '60000',
+    time: 60000,
   },
   {
     label: '02:00',
-    time: '120000',
+    time: 120000,
   },
   {
     label: '05:00',
-    time: '300000',
+    time: 300000,
   },
   {
     label: 'Бесконечная игра',
