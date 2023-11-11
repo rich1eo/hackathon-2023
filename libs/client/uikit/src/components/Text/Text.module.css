@@ -1,0 +1,55 @@
+/* THEMES */
+.title {
+  font-weight: 800;
+}
+
+.text {
+  font-weight: 500;
+}
+
+.title,
+.text {
+  color: var(--color-yellow);
+}
+
+.inverted {
+  & .title,
+  & .text {
+    color: var(--border-color);
+  }
+}
+
+/* ALIGN */
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+/* SIZE */
+
+.size_m {
+  & .title {
+    font-size: 9.6rem;
+  }
+
+  & .text {
+    font-size: 3.2rem;
+  }
+}
+
+.size_l {
+  & .title {
+    font-size: 12.8rem;
+  }
+
+  & .text {
+    font-size: 3.2rem;
+  }
+}

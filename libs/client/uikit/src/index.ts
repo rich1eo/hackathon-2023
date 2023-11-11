@@ -1,3 +1,6 @@
 export { Modal } from './components/Modal/Modal'
 export { Portal } from './components/Portal/Portal'
 export { classNames } from './lib/classNames/classNames'
+export { Button, ButtonSize, ButtonTheme } from './components/Button/Button'
+export { Text, TextSize, TextAlign, TextTheme } from './components/Text/Text'
+export { Card } from './components/Card/Card'

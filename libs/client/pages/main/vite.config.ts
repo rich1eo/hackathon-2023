@@ -1,9 +1,13 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts'
+/// <reference types="vite-plugin-svgr/client" />
+
 import * as path from 'path'
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
+import svgr from 'vite-plugin-svgr'
+
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   cacheDir: '../../../../node_modules/.vite/client-pages-main',
@@ -12,6 +16,9 @@ export default defineConfig({
     react(),
     nxViteTsPaths(),
     dts({ entryRoot: 'src', tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'), skipDiagnostics: true }),
+    svgr({
+      include: '**/*.svg',
+    }),
   ],
 
   // Uncomment this if you are using workers.
