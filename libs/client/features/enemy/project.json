@@ -1,0 +1,16 @@
+{
+  "name": "client-features-enemy",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/client/features/enemy/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/client/features/enemy/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
