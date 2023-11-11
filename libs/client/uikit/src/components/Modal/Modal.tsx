@@ -48,7 +48,7 @@ export const Modal = ({ className, children, isOpen, lazy, onClose }: ModalProps
     [handleClose],
   )
 
-  function handleContentClick(event: React.MouseEvent) {
+  const handleContentClick = (event: React.MouseEvent) => {
     event.stopPropagation()
   }
 

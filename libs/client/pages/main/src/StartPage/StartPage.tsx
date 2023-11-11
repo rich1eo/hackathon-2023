@@ -3,7 +3,7 @@ import styles from './StartPage.module.css'
 /* eslint-disable-next-line */
 export interface StartPageProps {}
 
-export function StartPage(props: StartPageProps) {
+export const StartPage = (props: StartPageProps) => {
   return (
     <div className={styles.StartPage}>
       <h1>Start Page</h1>
