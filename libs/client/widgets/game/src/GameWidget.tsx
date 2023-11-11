@@ -1,20 +1,28 @@
-import { memo, Reducer, useCallback, useContext, useMemo, useReducer } from 'react'
+import { memo, Reducer, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
-import { PointsContext } from '@hackathon-2023/client/features/game-context'
+import { GamemodeContext, PointsContext } from '@hackathon-2023/client/features/game-context'
 import { UnderstandingWeapon } from '@hackathon-2023/client/features/weapon'
 
 import { reducer } from './data/reducer'
 import { Action, State } from './data/types'
 import { Game } from './ui/Game'
+import { convertMilliseconds } from './utils/convert-milliseconds'
 
 export const GameWidget = memo(() => {
+  const navigate = useNavigate()
   const initialState: State = useMemo(() => {
     return {
       enemies: [],
     }
   }, [])
   const { points, addPoints } = useContext(PointsContext)
+  const { gamemode, timer } = useContext(GamemodeContext)
+
+  const { minutes: initMinutes, seconds: initSeconds } = convertMilliseconds(timer)
+  const [minutes, setMinutes] = useState(initMinutes)
+  const [seconds, setSeconds] = useState(initSeconds)
 
   const [state, dispatch] = useReducer<Reducer<State, Action>>(reducer, initialState)
 
@@ -49,6 +57,33 @@ export const GameWidget = memo(() => {
     dispatch({ type: 'SET_ENEMIES', payload: enemies })
   }, [])
 
+  const handleFinishGame = useCallback(() => {
+    navigate('/finish')
+  }, [])
+
+  useEffect(() => {
+    let timerId: NodeJS.Timeout
+
+    if (minutes > 0 || seconds > 0) {
+      timerId = setInterval(() => {
+        if (seconds > 0) {
+          setSeconds(seconds - 1)
+        } else {
+          if (minutes > 0) {
+            setMinutes(minutes - 1)
+            setSeconds(59)
+          } else {
+            clearInterval(timerId)
+          }
+        }
+      }, 1000)
+    } else {
+      handleFinishGame()
+    }
+
+    return () => clearInterval(timerId)
+  }, [minutes, seconds])
+
   return (
     <Game
       enemies={state.enemies}
@@ -57,6 +92,8 @@ export const GameWidget = memo(() => {
       handleAddPoints={handleAddPoints}
       handleKillEnemy={handleKillEnemy}
       handleSetEnemies={handleSetEnemies}
+      minutes={minutes}
+      seconds={seconds}
     />
   )
 })

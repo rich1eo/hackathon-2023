@@ -5,6 +5,8 @@ import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { Weapon } from '@hackathon-2023/client/features/weapon'
 import { Container, Stage, Text } from '@pixi/react'
 
+import { formatTime } from '../utils/format-time'
+
 import { Boxes } from './components/Boxes/Boxes'
 import { Enemies } from './components/Enemies/Enemies'
 
@@ -17,14 +19,27 @@ interface GameProps {
   handleAddPoints: (point: number) => void
   handleKillEnemy: (name: string) => void
   handleSetEnemies: (enemies: Enemy[]) => void
+  minutes: number
+  seconds: number
 }
 
 export const Game = memo(
-  ({ enemies, points, weapon, handleAddPoints, handleKillEnemy, handleSetEnemies }: GameProps) => {
+  ({ enemies, points, weapon, handleAddPoints, handleKillEnemy, handleSetEnemies, minutes, seconds }: GameProps) => {
     const textStyle = useMemo(() => new PIXI.TextStyle({ stroke: '#01d27e' }), [])
 
     return (
       <div className={styles.game}>
+        <div className={styles.info}>
+          <div className={styles.points}>
+            <p>баллы</p>
+            <p className={styles.pointsValue}>{points}</p>
+          </div>
+          <div className={styles.controllers}>
+            <p className={styles.timer}>
+              {formatTime(minutes)}:{formatTime(seconds)}
+            </p>
+          </div>
+        </div>
         <Stage options={{ backgroundColor: '#6a6a6c' }} width={1180} height={600}>
           <Enemies
             handleSetEnemies={handleSetEnemies}
@@ -35,10 +50,6 @@ export const Game = memo(
           />
 
           <Boxes />
-
-          <Container x={30} y={550}>
-            <Text style={textStyle} text={`Баллы: ${points.toString()}`} anchor={{ x: 0, y: 0.5 }} />
-          </Container>
         </Stage>
       </div>
     )
