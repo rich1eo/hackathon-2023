@@ -1,12 +1,12 @@
 export class Weapon {
   name: string
   damage: number
-  capacity: number
+  accuracy: number
 
-  constructor(name: string, damage: number = 1, capacity: number = 1) {
+  constructor(name: string, damage: number = 1, accuracy: number = 1) {
     this.name = name
     this.damage = damage
-    this.capacity = capacity
+    this.accuracy = accuracy
   }
 
   upgradeDamage() {
@@ -14,6 +14,6 @@ export class Weapon {
   }
 
   upgradeShotRadius() {
-    this.capacity += 1
+    this.accuracy += 1
   }
 }
