@@ -13,11 +13,6 @@ export const reducer = (state: State, action: Action) => {
         ...state,
         enemies: [...state.enemies, enemiesFactory[action.payload]()],
       }
-    case 'ADD_POINTS':
-      return {
-        ...state,
-        points: state.points + action.payload,
-      }
     case 'SET_ENEMIES':
       return {
         ...state,

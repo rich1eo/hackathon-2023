@@ -1,6 +1,7 @@
-import { memo, Reducer, useCallback, useMemo, useReducer } from 'react'
+import { memo, Reducer, useCallback, useContext, useMemo, useReducer } from 'react'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
+import { PointsContext } from '@hackathon-2023/client/features/game-context'
 import { UnderstandingWeapon } from '@hackathon-2023/client/features/weapon'
 
 import { reducer } from './data/reducer'
@@ -11,16 +12,16 @@ export const GameWidget = memo(() => {
   const initialState: State = useMemo(() => {
     return {
       enemies: [],
-      points: 0,
     }
   }, [])
+  const { points, addPoints } = useContext(PointsContext)
 
   const [state, dispatch] = useReducer<Reducer<State, Action>>(reducer, initialState)
 
   const weapon = new UnderstandingWeapon()
 
   const handleAddPoints = useCallback((point: number) => {
-    dispatch({ type: 'ADD_POINTS', payload: point })
+    addPoints(point)
   }, [])
 
   const handleDeleteEnemy = useCallback((name: string) => {
@@ -51,7 +52,7 @@ export const GameWidget = memo(() => {
   return (
     <Game
       enemies={state.enemies}
-      points={state.points}
+      points={points}
       weapon={weapon}
       handleAddPoints={handleAddPoints}
       handleKillEnemy={handleKillEnemy}
