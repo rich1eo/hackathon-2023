@@ -1,4 +1,4 @@
-import { Weakness } from '../types'
+import { DamageType } from '@hackathon-2023/client/features/weapon'
 import { Enemy } from './enemy'
 
 interface EarthEnemyProps {
@@ -8,18 +8,18 @@ interface EarthEnemyProps {
 
 export class SimpleEarthEnemy extends Enemy {
   constructor({ x, y }: EarthEnemyProps) {
-    super({ name: 'Earth', image: 'earth.png', x, y, speed: 1, health: 1, weakness: Weakness.Air, points: 1 })
+    super({ name: 'Earth', image: 'earth.png', x, y, speed: 1, health: 1, weakness: DamageType.Air, points: 1 })
   }
 }
 
 export class FastEarthEnemy extends Enemy {
   constructor({ x, y }: EarthEnemyProps) {
-    super({ name: 'Earth', image: 'earth.png', x, y, speed: 2, health: 1, weakness: Weakness.Air, points: 2 })
+    super({ name: 'Earth', image: 'earth.png', x, y, speed: 2, health: 1, weakness: DamageType.Air, points: 2 })
   }
 }
 
 export class StrongEarthEnemy extends Enemy {
   constructor({ x, y }: EarthEnemyProps) {
-    super({ name: 'Earth', image: 'earth.png', x, y, speed: 1, health: 2, weakness: Weakness.Air, points: 2 })
+    super({ name: 'Earth', image: 'earth.png', x, y, speed: 1, health: 2, weakness: DamageType.Air, points: 2 })
   }
 }

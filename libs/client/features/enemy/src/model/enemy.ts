@@ -1,8 +1,8 @@
-import { Weakness } from '../types'
+import { DamageType, Weapon } from '@hackathon-2023/client/features/weapon'
 
 interface EnemyProps {
   name: string
-  weakness: Weakness
+  weakness: DamageType
   image: string
   x: number
   y: number
@@ -13,7 +13,7 @@ interface EnemyProps {
 
 export class Enemy {
   name: string
-  weakness: Weakness
+  weakness: DamageType
   image: string
   x: number
   y: number
@@ -34,7 +34,7 @@ export class Enemy {
     this.points = points
   }
 
-  takeDamage(weapon: any): number {
+  takeDamage(weapon: Weapon): number {
     const damage = weapon.damageType === this.weakness ? weapon.damage * 2 : weapon.damage
     this.health -= damage
 
