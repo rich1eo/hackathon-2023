@@ -6,10 +6,10 @@ interface WeaponProps {
 }
 
 export enum DamageType {
-  Fire = 'Fire',
-  Water = 'Water',
-  Earth = 'Earth',
-  Air = 'Air',
+  Patience = 'Patience',
+  Understanding = 'Understanding',
+  Care = 'Care',
+  Attention = 'Attention',
 }
 
 export class Weapon {

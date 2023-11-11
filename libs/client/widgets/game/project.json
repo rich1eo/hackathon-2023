@@ -1,0 +1,16 @@
+{
+  "name": "client-widgets-game",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/client/widgets/game/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/client/widgets/game/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
