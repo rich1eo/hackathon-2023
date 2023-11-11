@@ -19,14 +19,25 @@ interface GameProps {
   handleAddPoints: (point: number) => void
   handleKillEnemy: (name: string) => void
   handleSetEnemies: (enemies: Enemy[]) => void
-  minutes: number
-  seconds: number
+  secondsElapsed: number
+  isEndless: boolean
+  handleFinishGame: () => void
+  handleRestart: () => void
 }
 
 export const Game = memo(
-  ({ enemies, points, weapon, handleAddPoints, handleKillEnemy, handleSetEnemies, minutes, seconds }: GameProps) => {
-    const textStyle = useMemo(() => new PIXI.TextStyle({ stroke: '#01d27e' }), [])
-
+  ({
+    enemies,
+    points,
+    weapon,
+    handleAddPoints,
+    handleKillEnemy,
+    handleSetEnemies,
+    secondsElapsed,
+    isEndless,
+    handleFinishGame,
+    handleRestart,
+  }: GameProps) => {
     return (
       <div className={styles.game}>
         <div className={styles.info}>
@@ -35,9 +46,9 @@ export const Game = memo(
             <p className={styles.pointsValue}>{points}</p>
           </div>
           <div className={styles.controllers}>
-            <p className={styles.timer}>
-              {formatTime(minutes)}:{formatTime(seconds)}
-            </p>
+            <p className={styles.timer}>{formatTime(secondsElapsed)}</p>
+            {isEndless && <button onClick={handleFinishGame}>Стоп</button>}
+            <button onClick={handleRestart}>Restart</button>
           </div>
         </div>
         <Stage options={{ backgroundColor: '#6a6a6c' }} width={1180} height={600}>

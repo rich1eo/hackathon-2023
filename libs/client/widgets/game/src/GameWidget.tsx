@@ -2,7 +2,7 @@ import { memo, Reducer, useCallback, useContext, useEffect, useMemo, useReducer,
 import { useNavigate } from 'react-router-dom'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
-import { GamemodeContext, PointsContext } from '@hackathon-2023/client/features/game-context'
+import { GamemodeContext, Gamemods, PointsContext } from '@hackathon-2023/client/features/game-context'
 import { UnderstandingWeapon } from '@hackathon-2023/client/features/weapon'
 
 import { reducer } from './data/reducer'
@@ -17,12 +17,11 @@ export const GameWidget = memo(() => {
       enemies: [],
     }
   }, [])
-  const { points, addPoints } = useContext(PointsContext)
+  const { points, addPoints, setPoints } = useContext(PointsContext)
   const { gamemode, timer } = useContext(GamemodeContext)
 
-  const { minutes: initMinutes, seconds: initSeconds } = convertMilliseconds(timer)
-  const [minutes, setMinutes] = useState(initMinutes)
-  const [seconds, setSeconds] = useState(initSeconds)
+  const { totalSeconds: initSeconds } = convertMilliseconds(timer)
+  const [secondsElapsed, setSecondsElapsed] = useState<number>(initSeconds)
 
   const [state, dispatch] = useReducer<Reducer<State, Action>>(reducer, initialState)
 
@@ -62,27 +61,29 @@ export const GameWidget = memo(() => {
   }, [])
 
   useEffect(() => {
-    let timerId: NodeJS.Timeout
+    if (gamemode !== Gamemods.Endless) {
+      if (secondsElapsed > 0) {
+        const timerId: NodeJS.Timeout = setInterval(() => {
+          setSecondsElapsed((prevSeconds) => prevSeconds - 1)
+        }, 1000)
 
-    if (minutes > 0 || seconds > 0) {
-      timerId = setInterval(() => {
-        if (seconds > 0) {
-          setSeconds(seconds - 1)
-        } else {
-          if (minutes > 0) {
-            setMinutes(minutes - 1)
-            setSeconds(59)
-          } else {
-            clearInterval(timerId)
-          }
-        }
-      }, 1000)
+        return () => clearInterval(timerId)
+      } else {
+        handleFinishGame()
+      }
     } else {
-      handleFinishGame()
-    }
+      const timerId: NodeJS.Timeout = setInterval(() => {
+        setSecondsElapsed((prevSeconds) => prevSeconds + 1)
+      }, 1000)
 
-    return () => clearInterval(timerId)
-  }, [minutes, seconds])
+      return () => clearInterval(timerId)
+    }
+  }, [secondsElapsed])
+
+  const handleRestart = useCallback(() => {
+    setPoints(0)
+    setSecondsElapsed(initSeconds)
+  }, [])
 
   return (
     <Game
@@ -92,8 +93,10 @@ export const GameWidget = memo(() => {
       handleAddPoints={handleAddPoints}
       handleKillEnemy={handleKillEnemy}
       handleSetEnemies={handleSetEnemies}
-      minutes={minutes}
-      seconds={seconds}
+      secondsElapsed={secondsElapsed}
+      isEndless={gamemode === Gamemods.Endless}
+      handleFinishGame={handleFinishGame}
+      handleRestart={handleRestart}
     />
   )
 })

@@ -1,9 +1,9 @@
 import { useCallback, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { PointsContext } from '@hackathon-2023/client/features/game-context'
 
 import styles from './FinishPage.module.css'
-import { useNavigate } from 'react-router-dom'
 
 /* eslint-disable-next-line */
 export interface FinishPageProps {}

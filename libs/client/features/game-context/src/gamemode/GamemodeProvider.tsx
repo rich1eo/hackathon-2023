@@ -13,15 +13,15 @@ const GamemodeContext = createContext<{
   changeMode: (gamemode: Gamemods) => void
   timer: number
 }>({
-  gamemode: Gamemods.HalfMinute,
+  gamemode: Gamemods.Endless,
   changeMode: () => {},
-  timer: 30000,
+  timer: 0,
 })
 const { Provider } = GamemodeContext
 
 const GamemodeProvider = ({ children }: PropsWithChildren) => {
-  const [gamemode, setGameMode] = useState<Gamemods>(Gamemods.HalfMinute)
-  const [timer, setTimer] = useState<number>(30000)
+  const [gamemode, setGameMode] = useState<Gamemods>(Gamemods.Endless)
+  const [timer, setTimer] = useState<number>(0)
 
   const changeMode = useCallback(
     (gamemode: Gamemods) => {
@@ -39,7 +39,7 @@ const GamemodeProvider = ({ children }: PropsWithChildren) => {
           setTimer(300000)
           break
         case Gamemods.Endless:
-          setTimer(Infinity)
+          setTimer(0)
           break
       }
       setGameMode(gamemode)

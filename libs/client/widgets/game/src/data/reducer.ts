@@ -1,4 +1,4 @@
-import { enemiesByName, enemiesFactory } from './enemies'
+import { enemiesFactory } from './enemies'
 import { Action, State } from './types'
 
 export const reducer = (state: State, action: Action) => {

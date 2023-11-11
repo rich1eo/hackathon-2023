@@ -25,19 +25,19 @@ const newPlacesEnemy = new NewPlacesEnemy()
 const momDisappearEnemy = new MomDisappearEnemy()
 const lonelinessEnemy = new LonelinessEnemy()
 
-export const enemiesByName: Record<string, Enemy> = {
-  [violenceEnemy.name]: violenceEnemy,
-  [darknessEnemy.name]: darknessEnemy,
-  [betrayalEnemy.name]: betrayalEnemy,
-  [unusualEnemy.name]: unusualEnemy,
-  [guardianshipEnemy.name]: guardianshipEnemy,
-  [beingRidiculedEnemy.name]: beingRidiculedEnemy,
-  [doctorsEnemy.name]: doctorsEnemy,
-  [adultsEnemy.name]: adultsEnemy,
-  [newPlacesEnemy.name]: newPlacesEnemy,
-  [momDisappearEnemy.name]: momDisappearEnemy,
-  [lonelinessEnemy.name]: lonelinessEnemy,
-}
+export const enemiesArray: Enemy[] = [
+  violenceEnemy,
+  darknessEnemy,
+  betrayalEnemy,
+  unusualEnemy,
+  guardianshipEnemy,
+  beingRidiculedEnemy,
+  doctorsEnemy,
+  adultsEnemy,
+  newPlacesEnemy,
+  momDisappearEnemy,
+  lonelinessEnemy,
+]
 
 export const enemiesFactory: Record<string, () => Enemy> = {
   [violenceEnemy.name]: () => new ViolenceEnemy(),
