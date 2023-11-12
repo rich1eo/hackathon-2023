@@ -1,2 +1,37 @@
-.FinishPage {
+.container {
+  background-color: var(--color-violet);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 90px 50px 40px;
+}
+
+.description {
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.text {
+  max-width: 720px;
+  margin-top: 25px;
+}
+
+.points {
+  padding: 6px 16px;
+  line-height: 1;
+  background-color: var(--yellow-color);
+  border-radius: 8px;
+  border: 5px solid var(--border-color);
+  color: var(--border-color);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 70px;
 }

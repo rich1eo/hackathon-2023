@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { ReactNode, memo } from 'react'
 
 import { classNames } from '../../lib/classNames/classNames'
 
@@ -23,8 +23,8 @@ export enum TextTheme {
 
 interface TextProps {
   className?: string
-  title?: string
-  text?: string
+  title?: string | ReactNode
+  text?: string | ReactNode
   theme?: TextTheme
   align?: TextAlign
   size?: TextSize

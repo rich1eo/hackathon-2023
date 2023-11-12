@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 
 import Close from '../../assets/close.svg'
+import Share from '../../assets/share.svg'
 import { classNames } from '../../lib/classNames/classNames'
 
 import styles from './Button.module.css'
@@ -11,9 +12,11 @@ export enum ButtonTheme {
   Yellow = 'yellow',
   Orange = 'orange',
   Close = 'close',
+  Share = 'share',
 }
 
 export enum ButtonSize {
+  S = 'size_s',
   M = 'size_m',
   L = 'size_l',
 }
@@ -32,6 +35,14 @@ export const Button = memo((props: ButtonProps) => {
     return (
       <button type="button" className={classNames(styles.closeBtn, {}, [className])} {...otherProps}>
         <Close />
+      </button>
+    )
+  }
+
+  if (theme === ButtonTheme.Share) {
+    return (
+      <button type="button" className={classNames(styles.shareBtn, {}, [className])} {...otherProps}>
+        <Share />
       </button>
     )
   }
