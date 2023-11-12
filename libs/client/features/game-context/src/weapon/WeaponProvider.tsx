@@ -20,7 +20,9 @@ const WeaponContext = createContext<{
   changeWeapon: (weapon: string) => void
 }>({
   weapon: new UnderstandingWeapon(),
-  changeWeapon: () => {},
+  changeWeapon: () => {
+    // do nothing
+  },
 })
 const { Provider } = WeaponContext
 

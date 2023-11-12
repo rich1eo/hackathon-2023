@@ -15,7 +15,7 @@ export const FinishPage = (props: FinishPageProps) => {
 
   const handleReastartGame = useCallback(() => {
     navigate('/game')
-  }, [])
+  }, [navigate])
 
   return (
     <div className={styles.container}>

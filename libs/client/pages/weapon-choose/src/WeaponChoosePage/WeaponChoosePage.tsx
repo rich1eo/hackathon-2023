@@ -5,8 +5,6 @@ import { WeaponContext } from '@hackathon-2023/client/features/game-context'
 
 const weapons = ['UnderstandingWeapon', 'PatienceWeapon', 'CareWeapon', 'AttentionWeapon']
 
-interface WeaponChooseProps {}
-
 export const WeaponChoosePage = () => {
   const { weapon, changeWeapon } = useContext(WeaponContext)
 

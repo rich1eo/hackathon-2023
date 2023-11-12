@@ -14,7 +14,9 @@ const GamemodeContext = createContext<{
   timer: number
 }>({
   gamemode: Gamemods.Endless,
-  changeMode: () => {},
+  changeMode: () => {
+    // do nothing
+  },
   timer: 0,
 })
 const { Provider } = GamemodeContext

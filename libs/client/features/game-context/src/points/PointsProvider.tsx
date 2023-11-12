@@ -7,9 +7,15 @@ const PointsContext = createContext<{
   setPoints: (points: number) => void
 }>({
   points: 0,
-  addPoints: () => {},
-  removePoints: () => {},
-  setPoints: () => {},
+  addPoints: () => {
+    // do nothing
+  },
+  removePoints: () => {
+    // do nothing
+  },
+  setPoints: () => {
+    // do nothing
+  },
 })
 const { Provider } = PointsContext
 
