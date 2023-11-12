@@ -1,6 +1,7 @@
 .StartPage {
   background: var(--color-violet);
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .header {
