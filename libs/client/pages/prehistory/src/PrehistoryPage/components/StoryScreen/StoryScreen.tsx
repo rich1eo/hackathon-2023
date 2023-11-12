@@ -20,7 +20,7 @@ export const StoryScreen = memo(
         <img src={image} alt="image" className={styles.image} />
 
         <div className={styles.content}>
-          <Text size={TextSize.S} theme={TextTheme.Inverted} text={text} />
+          <Text size={TextSize.S} theme={TextTheme.Inverted} text={text} className={styles.storyText} />
 
           {onClickPrevStep && (
             <Button onClick={onClickPrevStep} theme={ButtonTheme.Orange} className={styles.prev}>

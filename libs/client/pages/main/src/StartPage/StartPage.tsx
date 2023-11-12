@@ -1,23 +1,23 @@
 import { memo, useCallback, useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { EnemyModal } from '@hackathon-2023/client/features/enemy'
+import { GamemodeContext, Gamemods } from '@hackathon-2023/client/features/game-context'
 import { RulesModal } from '@hackathon-2023/client/features/rules'
 import {
   Button,
   ButtonSize,
   ButtonTheme,
   Card,
+  classNames,
   Text,
   TextAlign,
   TextTheme,
-  classNames,
 } from '@hackathon-2023/client/uikit'
 
 import Toys from '../assets/toys.svg'
 
 import styles from './StartPage.module.css'
-import { GamemodeContext, Gamemods } from '@hackathon-2023/client/features/game-context'
-import { useNavigate } from 'react-router-dom'
 
 const timeMods = [
   {

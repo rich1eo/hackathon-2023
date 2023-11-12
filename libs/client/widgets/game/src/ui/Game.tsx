@@ -3,8 +3,9 @@ import { memo, useMemo } from 'react'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { Weapon } from '@hackathon-2023/client/features/weapon'
-import { Container, Stage } from '@pixi/react'
 import { Text, TextSize } from '@hackathon-2023/client/uikit'
+import { Button, ButtonTheme } from '@hackathon-2023/client/uikit'
+import { Container, Stage } from '@pixi/react'
 
 import { formatTime } from '../utils/format-time'
 
@@ -12,7 +13,6 @@ import { Boxes } from './components/Boxes/Boxes'
 import { Enemies } from './components/Enemies/Enemies'
 
 import styles from './Game.module.css'
-import { Button, ButtonTheme } from '@hackathon-2023/client/uikit'
 
 interface GameProps {
   enemies: Enemy[]

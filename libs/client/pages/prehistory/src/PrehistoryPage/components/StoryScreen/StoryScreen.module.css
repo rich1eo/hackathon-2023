@@ -65,6 +65,10 @@
   font-size: 20px;
 }
 
+.storyText {
+  line-height: 1.5;
+}
+
 @keyframes appear {
   from {
     opacity: 0;
