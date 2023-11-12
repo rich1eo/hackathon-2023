@@ -1,7 +1,8 @@
 .StartPage {
   background: var(--color-violet);
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
+  min-height: 100vh;
 }
 
 .header {
@@ -15,6 +16,7 @@
 
 .content {
   max-width: 63%;
+  text-wrap: balance;
 }
 
 .timeCard {
@@ -32,6 +34,7 @@
 
 .main svg {
   position: absolute;
+  max-width: 90%;
   bottom: 45px;
   right: 50px;
   z-index: 2;
@@ -50,4 +53,30 @@
   bottom: 84px;
   right: 95px;
   z-index: 100;
+}
+
+@media (max-width: 1531px) {
+  .main svg {
+    width: 65rem;
+    bottom: -32px;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+
+  .timeCard {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1408px) {
+  .main svg {
+    width: 56rem;
+    bottom: -54px;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
 }

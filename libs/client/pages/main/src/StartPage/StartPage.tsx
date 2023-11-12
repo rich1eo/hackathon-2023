@@ -38,7 +38,10 @@ export const StartPage = (props: StartPageProps) => {
       </header>
       <main className={styles.main}>
         <div className={styles.content}>
-          <Text text="Ребенок, усыновлённый приёмными родителями, имеет свои страхи, с которыми нужно помочь ему справиться." />
+          <Text
+            text="Ребенок, усыновлённый приёмными родителями, имеет свои страхи, с которыми нужно помочь ему справиться."
+            className={styles.text}
+          />
           <Card className={styles.timeCard}>
             <Text text="Выберите время игры:" theme={TextTheme.Inverted} />
             <div className={styles.timeList}>
