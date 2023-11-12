@@ -4,6 +4,7 @@ import { FinishPage } from '@hackathon-2023/client/pages/finish'
 import { GamePage } from '@hackathon-2023/client/pages/game'
 import { StartPage } from '@hackathon-2023/client/pages/main'
 import { PrehistoryPage } from '@hackathon-2023/client/pages/prehistory'
+import { SharePage } from '@hackathon-2023/client/pages/share'
 import { WeaponChoosePage } from '@hackathon-2023/client/pages/weapon-choose'
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/finish',
     element: <FinishPage />,
+  },
+  {
+    path: '/share',
+    element: <SharePage />,
   },
 ])
 

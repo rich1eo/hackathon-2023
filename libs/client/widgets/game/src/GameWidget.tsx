@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { GamemodeContext, Gamemods, PointsContext, WeaponContext } from '@hackathon-2023/client/features/game-context'
-import { UnderstandingWeapon } from '@hackathon-2023/client/features/weapon'
 
 import { reducer } from './data/reducer'
 import { Action, State } from './data/types'

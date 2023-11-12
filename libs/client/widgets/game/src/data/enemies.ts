@@ -3,6 +3,7 @@ import {
   BeingRidiculedEnemy,
   BetrayalEnemy,
   DarknessEnemy,
+  DarknessFastEnemy,
   DoctorsEnemy,
   Enemy,
   GuardianshipEnemy,
@@ -24,6 +25,7 @@ const adultsEnemy = new AdultsEnemy()
 const newPlacesEnemy = new NewPlacesEnemy()
 const momDisappearEnemy = new MomDisappearEnemy()
 const lonelinessEnemy = new LonelinessEnemy()
+const darknessFastEnemy = new DarknessFastEnemy()
 
 export const enemiesArray: Enemy[] = [
   violenceEnemy,
@@ -37,6 +39,7 @@ export const enemiesArray: Enemy[] = [
   newPlacesEnemy,
   momDisappearEnemy,
   lonelinessEnemy,
+  darknessFastEnemy,
 ]
 
 export const enemiesFactory: Record<string, () => Enemy> = {
@@ -51,4 +54,5 @@ export const enemiesFactory: Record<string, () => Enemy> = {
   [newPlacesEnemy.name]: () => new NewPlacesEnemy(),
   [momDisappearEnemy.name]: () => new MomDisappearEnemy(),
   [lonelinessEnemy.name]: () => new LonelinessEnemy(),
+  [darknessFastEnemy.name]: () => new DarknessFastEnemy(),
 }
