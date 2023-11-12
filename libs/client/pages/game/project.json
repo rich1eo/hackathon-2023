@@ -1,7 +1,7 @@
 {
-  "name": "client-pages-start",
+  "name": "client-pages-game",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/client/pages/start/src",
+  "sourceRoot": "libs/client/pages/game/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,23 +9,7 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/client/pages/start/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/libs/client/pages/start"
-      },
-      "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
-        }
+        "lintFilePatterns": ["libs/client/pages/game/**/*.{ts,tsx,js,jsx}"]
       }
     }
   }

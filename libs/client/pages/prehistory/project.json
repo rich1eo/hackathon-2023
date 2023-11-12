@@ -1,0 +1,16 @@
+{
+  "name": "client-pages-prehistory",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/client/pages/prehistory/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/client/pages/prehistory/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

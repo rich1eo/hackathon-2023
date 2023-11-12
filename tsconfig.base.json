@@ -17,11 +17,15 @@
     "paths": {
       "@hackathon-2023/client/features/enemy": ["libs/client/features/enemy/src/index.ts"],
       "@hackathon-2023/client/features/rules": ["libs/client/features/rules/src/index.ts"],
+      "@hackathon-2023/client/features/game-context": ["libs/client/features/game-context/src/index.ts"],
       "@hackathon-2023/client/features/weapon": ["libs/client/features/weapon/src/index.ts"],
       "@hackathon-2023/client/pages/finish": ["libs/client/pages/finish/src/index.ts"],
       "@hackathon-2023/client/pages/game": ["libs/client/pages/game/src/index.ts"],
       "@hackathon-2023/client/pages/main": ["libs/client/pages/main/src/index.ts"],
-      "@hackathon-2023/client/uikit": ["libs/client/uikit/src/index.ts"]
+      "@hackathon-2023/client/pages/prehistory": ["libs/client/pages/prehistory/src/index.ts"],
+      "@hackathon-2023/client/pages/weapon-choose": ["libs/client/pages/weapon-choose/src/index.ts"],
+      "@hackathon-2023/client/uikit": ["libs/client/uikit/src/index.ts"],
+      "@hackathon-2023/client/widgets/game": ["libs/client/widgets/game/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

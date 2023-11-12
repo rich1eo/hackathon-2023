@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.image {
+  width: auto;
+  height: 80vh;
+  opacity: 0;
+  animation: imageAppear 1s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+.content {
+  height: 20vh;
+  width: 80vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #000;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  animation: contentAppear 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.text {
+  color: #fff;
+}
+
+@keyframes imageAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentAppear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
