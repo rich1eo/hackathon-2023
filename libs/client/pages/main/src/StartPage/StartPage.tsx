@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react'
 
+import { EnemyModal } from '@hackathon-2023/client/features/enemy'
 import { RulesModal } from '@hackathon-2023/client/features/rules'
 import { Button, ButtonSize, ButtonTheme, Card, Text, TextAlign, TextTheme } from '@hackathon-2023/client/uikit'
 
@@ -79,6 +80,8 @@ export const StartPage = (props: StartPageProps) => {
         <Button className={styles.fearsBtn} onClick={handleOpenFears}>
           Страхи
         </Button>
+        {openFears && <EnemyModal isOpen={openFears} onClose={handleCloseFears} />}
+
         <Button className={styles.rulesBtn} theme={ButtonTheme.Green} onClick={handleOpenRules}>
           Правила
         </Button>

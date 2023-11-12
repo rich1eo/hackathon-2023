@@ -8,15 +8,21 @@ import styles from './Modal.module.css'
 
 const ANIMATION_DELAY = 100
 
+export enum ModalTheme {
+  Primary = '',
+  Pink = 'pink',
+}
+
 interface ModalProps {
   children: ReactNode
   isOpen: boolean
   onClose: () => void
   lazy?: boolean
   className?: string
+  theme?: ModalTheme
 }
 
-export const Modal = ({ className, children, isOpen, lazy, onClose }: ModalProps) => {
+export const Modal = ({ className, children, isOpen, lazy, theme = ModalTheme.Primary, onClose }: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
@@ -73,7 +79,7 @@ export const Modal = ({ className, children, isOpen, lazy, onClose }: ModalProps
     <Portal>
       <div className={classNames(styles.Modal, mods, [className])}>
         <div className={styles.overlay} onClick={handleClose}>
-          <div className={styles.content} onClick={handleContentClick}>
+          <div className={`${styles.content} ${styles[theme]}`} onClick={handleContentClick}>
             <Button theme={ButtonTheme.Close} className={styles.closeBtn} onClick={handleClose} />
             {children}
           </div>

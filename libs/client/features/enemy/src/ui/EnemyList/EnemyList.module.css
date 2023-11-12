@@ -1,0 +1,15 @@
+.LegendList {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 7rem 2rem 2rem;
+}
+
+.title {
+  margin-top: 1rem;
+}
+
+.card {
+  flex-basis: 190px;
+}

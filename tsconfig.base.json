@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@hackathon-2023/client/features/enemy": ["libs/client/features/enemy/src/index.ts"],
-      "@hackathon-2023/client/features/rules": ["libs/client/features/rules/src/index.ts"],
       "@hackathon-2023/client/features/game-context": ["libs/client/features/game-context/src/index.ts"],
+      "@hackathon-2023/client/features/rules": ["libs/client/features/rules/src/index.ts"],
       "@hackathon-2023/client/features/weapon": ["libs/client/features/weapon/src/index.ts"],
       "@hackathon-2023/client/pages/finish": ["libs/client/pages/finish/src/index.ts"],
       "@hackathon-2023/client/pages/game": ["libs/client/pages/game/src/index.ts"],
