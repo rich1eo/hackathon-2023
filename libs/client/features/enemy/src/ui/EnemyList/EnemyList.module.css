@@ -2,7 +2,8 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 7rem 2rem 2rem;
 }
 
 .title {
@@ -10,5 +11,5 @@
 }
 
 .card {
-  flex-basis: 250px;
+  flex-basis: 190px;
 }
