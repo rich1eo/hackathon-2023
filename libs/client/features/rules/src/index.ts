@@ -1,1 +1,1 @@
-export { RulesModal } from './ui/RulesModal'
+export { RulesModal } from './ui/RulesModal/RulesModal'
