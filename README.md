@@ -39,7 +39,13 @@
 ## Стек
 
 - Собран в моно-репозитории [Nx](https://nx.dev/)
-- Front: React, TypeScript, PixiJS, React Router
+- Front:
+  - React
+  - TypeScript
+  - PixiJS
+  - React Router
+  - Context API
+  - CSS Modules
 
 ## Дизайн
 
