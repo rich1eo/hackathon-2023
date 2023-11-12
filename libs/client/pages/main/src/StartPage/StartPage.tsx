@@ -1,3 +1,6 @@
+import { useCallback, useState } from 'react'
+
+import { RulesModal } from '@hackathon-2023/client/features/rules'
 import { Button, ButtonSize, ButtonTheme, Card, Text, TextAlign, TextTheme } from '@hackathon-2023/client/uikit'
 
 import Toys from '../assets/toys.svg'
@@ -26,11 +29,30 @@ const timeMods = [
   },
   {
     label: 'Бесконечная игра',
-    time: '',
+    time: 0,
   },
 ]
 
 export const StartPage = (props: StartPageProps) => {
+  const [openRules, setOpenRules] = useState(false)
+  const [openFears, setOpenFears] = useState(false)
+
+  const handleOpenRules = useCallback(() => {
+    setOpenRules(true)
+  }, [])
+
+  const handleCloseRules = useCallback(() => {
+    setOpenRules(false)
+  }, [])
+
+  const handleOpenFears = useCallback(() => {
+    setOpenFears(true)
+  }, [])
+
+  const handleCloseFears = useCallback(() => {
+    setOpenFears(false)
+  }, [])
+
   return (
     <div className={styles.StartPage}>
       <header className={styles.header}>
@@ -52,14 +74,16 @@ export const StartPage = (props: StartPageProps) => {
           </Card>
           <Button size={ButtonSize.L}>Старт</Button>
         </div>
+
         <Toys />
-        <Button className={styles.fearsBtn}>Страхи</Button>
-        <Button className={styles.rulesBtn} theme={ButtonTheme.Green}>
+        <Button className={styles.fearsBtn} onClick={handleOpenFears}>
+          Страхи
+        </Button>
+        <Button className={styles.rulesBtn} theme={ButtonTheme.Green} onClick={handleOpenRules}>
           Правила
         </Button>
+        {openRules && <RulesModal isOpen={openRules} onClose={handleCloseRules} />}
       </main>
     </div>
   )
 }
-
-export default StartPage

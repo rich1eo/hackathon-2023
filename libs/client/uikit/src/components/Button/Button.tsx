@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 
+import Close from '../../assets/close.svg'
 import { classNames } from '../../lib/classNames/classNames'
 
 import styles from './Button.module.css'
@@ -7,6 +8,7 @@ import styles from './Button.module.css'
 export enum ButtonTheme {
   Primary = 'primary',
   Green = 'green',
+  Close = 'close',
 }
 
 export enum ButtonSize {
@@ -15,7 +17,7 @@ export enum ButtonSize {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode
+  children?: ReactNode
   className?: string
   size?: ButtonSize
   theme?: ButtonTheme
@@ -23,6 +25,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo((props: ButtonProps) => {
   const { className, children, size = ButtonSize.M, theme = ButtonTheme.Primary, disabled, ...otherProps } = props
+
+  if (theme === ButtonTheme.Close) {
+    return (
+      <button type="button" className={classNames(styles.closeBtn, {}, [className])} {...otherProps}>
+        <Close />
+      </button>
+    )
+  }
 
   return (
     <button
