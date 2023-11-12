@@ -2,10 +2,11 @@ import { useCallback, useContext, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { PointsContext } from '@hackathon-2023/client/features/game-context'
+import { Button, ButtonSize, ButtonTheme, Text, TextAlign, TextSize } from '@hackathon-2023/client/uikit'
+
+import { fearDeclination } from './utils/fear-declination'
 
 import styles from './FinishPage.module.css'
-import { Button, ButtonSize, ButtonTheme, Text, TextAlign, TextSize } from '@hackathon-2023/client/uikit'
-import { fearDeclination } from './utils/fear-declination'
 
 export const FinishPage = () => {
   const { points, setPoints } = useContext(PointsContext)
@@ -15,6 +16,10 @@ export const FinishPage = () => {
   const handleReastartGame = useCallback(() => {
     setPoints(0)
     navigate('/game')
+  }, [navigate])
+
+  const handleShare = useCallback(() => {
+    navigate('/share')
   }, [navigate])
 
   const fearString = useMemo(() => fearDeclination(points), [points])
@@ -46,7 +51,7 @@ export const FinishPage = () => {
           Начать снова
         </Button>
 
-        <Button theme={ButtonTheme.Share} />
+        <Button onClick={handleShare} theme={ButtonTheme.Share} />
       </div>
     </div>
   )

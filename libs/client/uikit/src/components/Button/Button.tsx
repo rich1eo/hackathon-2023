@@ -2,6 +2,9 @@ import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 
 import Close from '../../assets/close.svg'
 import Share from '../../assets/share.svg'
+import Telegram from '../../assets/telegram.svg'
+import Twitter from '../../assets/twitter.svg'
+import Vk from '../../assets/vk.svg'
 import { classNames } from '../../lib/classNames/classNames'
 
 import styles from './Button.module.css'
@@ -13,6 +16,9 @@ export enum ButtonTheme {
   Orange = 'orange',
   Close = 'close',
   Share = 'share',
+  Twitter = 'twitter',
+  Telegram = 'telegram',
+  Vk = 'vk',
 }
 
 export enum ButtonSize {
@@ -43,6 +49,29 @@ export const Button = memo((props: ButtonProps) => {
     return (
       <button type="button" className={classNames(styles.shareBtn, {}, [className])} {...otherProps}>
         <Share />
+      </button>
+    )
+  }
+  if (theme === ButtonTheme.Twitter) {
+    return (
+      <button type="button" className={classNames(styles.shareBtn, {}, [className])} {...otherProps}>
+        <Twitter />
+      </button>
+    )
+  }
+
+  if (theme === ButtonTheme.Telegram) {
+    return (
+      <button type="button" className={classNames(styles.shareBtn, {}, [className])} {...otherProps}>
+        <Telegram />
+      </button>
+    )
+  }
+
+  if (theme === ButtonTheme.Vk) {
+    return (
+      <button type="button" className={classNames(styles.shareBtn, {}, [className])} {...otherProps}>
+        <Vk />
       </button>
     )
   }
