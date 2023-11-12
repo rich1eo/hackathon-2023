@@ -23,13 +23,13 @@ export const StoryScreen = memo(
           <Text size={TextSize.S} theme={TextTheme.Inverted} text={text} />
 
           {onClickPrevStep && (
-            <Button onClick={onClickPrevStep} theme={ButtonTheme.Yellow} className={styles.prev}>
+            <Button onClick={onClickPrevStep} theme={ButtonTheme.Orange} className={styles.prev}>
               Назад
             </Button>
           )}
 
           {onClickNextStep && (
-            <Button onClick={onClickNextStep} theme={ButtonTheme.Yellow} className={styles.next}>
+            <Button onClick={onClickNextStep} theme={ButtonTheme.Orange} className={styles.next}>
               {nextButtonText}
             </Button>
           )}
