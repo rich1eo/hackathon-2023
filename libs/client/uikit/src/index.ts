@@ -1,4 +1,4 @@
-export { Modal } from './components/Modal/Modal'
+export { Modal, ModalTheme } from './components/Modal/Modal'
 export { Portal } from './components/Portal/Portal'
 export { classNames } from './lib/classNames/classNames'
 export { Button, ButtonSize, ButtonTheme } from './components/Button/Button'

@@ -1,0 +1,4 @@
+.Modal > div > div {
+  overflow: auto;
+  height: 90%;
+}
