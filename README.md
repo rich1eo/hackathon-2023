@@ -8,7 +8,7 @@
 
 - [Виктория](https://t.me/Veles_Pan)
 - [Валерия](https://t.me/valeriefilatova)
-- [Влад](https://t.me/richeo)
+- [Влад](https://t.me/rich1eo)
 
 ## О проекте - Shoot Children' Scares
 
