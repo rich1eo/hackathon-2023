@@ -1,6 +1,6 @@
 export { Enemy } from './model/enemy'
 export { BetrayalEnemy, UnusualEnemy, GuardianshipEnemy } from './model/understandingWeakEnemies'
 export { ViolenceEnemy, BeingRidiculedEnemy, DoctorsEnemy } from './model/careWeakEnemies'
-export { DarknessEnemy, AdultsEnemy } from './model/patienceWeakEnemies'
+export { DarknessEnemy, AdultsEnemy, DarknessFastEnemy } from './model/patienceWeakEnemies'
 export { NewPlacesEnemy, MomDisappearEnemy, LonelinessEnemy } from './model/attentionWeakEnemies'
 export { EnemyModal } from './ui/EnemyModal/EnemyModal'

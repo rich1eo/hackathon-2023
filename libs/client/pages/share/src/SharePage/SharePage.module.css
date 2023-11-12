@@ -14,7 +14,7 @@
   aspect-ratio: 1160/566;
   background-color: var(--color-yellow);
   border-radius: 10px;
-  border: 8px solid #494949;
+  border: 8px solid var(--border-color);
   padding: 2vw 2vw 4vw;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
 
 .imageTitle {
   font-size: 5vw;
-  color: #494949;
+  color: var(--border-color);
   font-family: var(--font-family);
   font-style: normal;
   font-weight: 800;
@@ -43,7 +43,7 @@
 
 .imageText {
   font-size: 1.7vw;
-  color: #494949;
+  color: var(--border-color);
   font-family: var(--font-family);
 }
 

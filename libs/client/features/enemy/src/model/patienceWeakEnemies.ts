@@ -6,11 +6,6 @@ import darknessImage from './assets/darkness.png'
 import darknessBrokenImage from './assets/darkness-broken.png'
 import { Enemy } from './enemy'
 
-interface EnemyProps {
-  x: number
-  y: number
-}
-
 export class DarknessEnemy extends Enemy {
   constructor() {
     super({
@@ -39,6 +34,22 @@ export class AdultsEnemy extends Enemy {
       health: 4,
       weakness: DamageType.Patience,
       points: 7,
+    })
+  }
+}
+
+export class DarknessFastEnemy extends Enemy {
+  constructor() {
+    super({
+      name: 'DarknessFast',
+      image: darknessImage,
+      defeatedImage: darknessBrokenImage,
+      x: 818,
+      y: 385,
+      speed: 2,
+      health: 2,
+      weakness: DamageType.Patience,
+      points: 5,
     })
   }
 }

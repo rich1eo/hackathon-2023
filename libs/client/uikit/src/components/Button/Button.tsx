@@ -5,6 +5,8 @@ import Share from '../../assets/share.svg'
 import Telegram from '../../assets/telegram.svg'
 import Twitter from '../../assets/twitter.svg'
 import Vk from '../../assets/vk.svg'
+import Reastart from '../../assets/restart.svg'
+import Stop from '../../assets/stop.svg'
 import { classNames } from '../../lib/classNames/classNames'
 
 import styles from './Button.module.css'
@@ -19,6 +21,8 @@ export enum ButtonTheme {
   Twitter = 'twitter',
   Telegram = 'telegram',
   Vk = 'vk',
+  Restart = 'restart',
+  Stop = 'stop',
 }
 
 export enum ButtonSize {
@@ -72,6 +76,22 @@ export const Button = memo((props: ButtonProps) => {
     return (
       <button type="button" className={classNames(styles.shareBtn, {}, [className])} {...otherProps}>
         <Vk />
+      </button>
+    )
+  }
+
+  if (theme === ButtonTheme.Restart) {
+    return (
+      <button type="button" className={classNames(styles.restartBtn, {}, [className])} {...otherProps}>
+        <Reastart />
+      </button>
+    )
+  }
+
+  if (theme === ButtonTheme.Stop) {
+    return (
+      <button type="button" className={classNames(styles.stopBtn, {}, [className])} {...otherProps}>
+        <Stop />
       </button>
     )
   }

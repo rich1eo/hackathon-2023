@@ -59,6 +59,45 @@
   fill: var(--color-pink);
 }
 
+.restartBtn,
+.stopBtn {
+  background: var(--yellow-color);
+  border: 4px solid var(--border-color);
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    border-color: var(--yellow-color);
+    background: var(--border-color);
+  }
+}
+
+.restartBtn > svg {
+  width: 45px;
+  height: 45px;
+}
+
+.stopBtn > svg {
+  width: 25px;
+  height: 25px;
+}
+
+.restartBtn > svg > path,
+.stopBtn > svg > path {
+  fill: var(--border-color);
+}
+
+.restartBtn:hover > svg > path,
+.stopBtn:hover > svg > path {
+  fill: var(--yellow-color);
+}
+
 /* Size */
 
 .size_l {
