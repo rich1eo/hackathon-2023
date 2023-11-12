@@ -1,6 +1,7 @@
 import { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 
 import { classNames } from '../../lib/classNames/classNames'
+import { Button, ButtonTheme } from '../Button/Button'
 import { Portal } from '../Portal/Portal'
 
 import styles from './Modal.module.css'
@@ -73,6 +74,7 @@ export const Modal = ({ className, children, isOpen, lazy, onClose }: ModalProps
       <div className={classNames(styles.Modal, mods, [className])}>
         <div className={styles.overlay} onClick={handleClose}>
           <div className={styles.content} onClick={handleContentClick}>
+            <Button theme={ButtonTheme.Close} className={styles.closeBtn} onClick={handleClose} />
             {children}
           </div>
         </div>

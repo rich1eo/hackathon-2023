@@ -17,6 +17,8 @@ html {
 }
 
 body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   transition: color 0.3s, background-color 0.3s;
 }

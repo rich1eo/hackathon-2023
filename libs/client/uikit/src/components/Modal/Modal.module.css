@@ -19,13 +19,12 @@
 .content {
   padding: 2rem;
   border-radius: 2rem;
-  /* background-color: var(--modal-bg-color); */
-  background-color: #000;
-  /* color: var(--text-color); */
-  color: #e7e7e7;
+  background-color: var(--color-yellow);
+  border: 4px solid var(--border-color);
   transform: scale(0.5);
   max-width: 60%;
   transition: transform 0.3s;
+  position: relative;
 }
 
 .opened {
@@ -33,13 +32,19 @@
   pointer-events: auto;
   z-index: var(--modal-index);
 
-  .content & {
+  & .content {
     transform: scale(1);
   }
 }
 
 .isClosing {
-  .content & {
+  & .content {
     transform: scale(0.2);
   }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
