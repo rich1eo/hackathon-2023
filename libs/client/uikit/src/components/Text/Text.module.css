@@ -53,3 +53,13 @@
     font-size: 3.2rem;
   }
 }
+
+.size_s {
+  & .title {
+    font-size: 7.2rem;
+  }
+
+  & .text {
+    font-size: 1.8rem;
+  }
+}
