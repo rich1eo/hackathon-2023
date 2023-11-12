@@ -56,7 +56,7 @@ export const SharePage = () => {
             target="_blank"
             href={`https://twitter.com/intent/tweet?text=Я помог побороть ${points} ${fearDeclination(
               points,
-            )}! Попробуйте и вы&url= https://hackathon-2023-murex.vercel.app/`}
+            )}! Попробуйте и вы&url= https://stronger-than-fears.vercel.app/`}
             rel="noreferrer"
           >
             <Button theme={ButtonTheme.Twitter} size={ButtonSize.M} />
@@ -64,7 +64,7 @@ export const SharePage = () => {
 
           <a
             target="_blank"
-            href={`https://telegram.me/share/url?url= https://hackathon-2023-murex.vercel.app/&text=Я помог побороть ${points} ${fearDeclination(
+            href={`https://telegram.me/share/url?url= https://stronger-than-fears.vercel.app/&text=Я помог побороть ${points} ${fearDeclination(
               points,
             )}! Попробуйте и вы
             `}
@@ -75,7 +75,7 @@ export const SharePage = () => {
 
           <a
             target="_blank"
-            href={`https://vk.com/share.php?url= https://hackathon-2023-murex.vercel.app/&title=Я помог побороть ${points} ${fearDeclination(
+            href={`https://vk.com/share.php?url= https://stronger-than-fears.vercel.app/&title=Я помог побороть ${points} ${fearDeclination(
               points,
             )}! Попробуйте и вы&noparse=true
             `}
