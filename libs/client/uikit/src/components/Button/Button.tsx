@@ -8,6 +8,7 @@ import styles from './Button.module.css'
 export enum ButtonTheme {
   Primary = 'primary',
   Green = 'green',
+  Yellow = 'yellow',
   Close = 'close',
 }
 
