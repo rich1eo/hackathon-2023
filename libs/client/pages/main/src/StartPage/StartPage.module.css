@@ -1,7 +1,5 @@
 .StartPage {
   background: var(--color-violet);
-  /* width: 100vw;
-  height: 100vh; */
   min-height: 100vh;
 }
 
@@ -37,7 +35,7 @@
   max-width: 90%;
   bottom: 45px;
   right: 50px;
-  z-index: 2;
+  z-index: var(--main-svg-index);
   pointer-events: none;
 }
 
@@ -45,14 +43,14 @@
   position: absolute;
   bottom: 140px;
   right: 95px;
-  z-index: 100;
+  z-index: var(--btn-index);
 }
 
 .rulesBtn {
   position: absolute;
   bottom: 84px;
   right: 95px;
-  z-index: 100;
+  z-index: var(--btn-index);
 }
 
 @media (max-width: 1531px) {
