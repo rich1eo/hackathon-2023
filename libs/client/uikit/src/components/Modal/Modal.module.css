@@ -17,12 +17,12 @@
 }
 
 .content {
-  padding: 2rem;
+  padding: 6rem 3rem 3rem;
   border-radius: 2rem;
   background-color: var(--color-yellow);
   border: 4px solid var(--border-color);
   transform: scale(0.5);
-  max-width: 60%;
+  max-width: 80%;
   transition: transform 0.3s;
   position: relative;
 }

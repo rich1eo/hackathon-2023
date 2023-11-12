@@ -63,8 +63,8 @@
 
 .size_l {
   font-weight: 800;
-  font-size: 4.8rem;
-  padding: 3rem 12rem;
+  font-size: 4rem;
+  padding: 3rem 10rem;
   border: 8px solid var(--border-color);
   border-radius: 8px;
 
