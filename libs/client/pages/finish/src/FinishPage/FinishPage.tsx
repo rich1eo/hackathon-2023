@@ -13,7 +13,7 @@ export const FinishPage = () => {
 
   const navigate = useNavigate()
 
-  const handleReastartGame = useCallback(() => {
+  const handleRestartGame = useCallback(() => {
     setPoints(0)
     navigate('/game')
   }, [navigate])
@@ -43,11 +43,11 @@ export const FinishPage = () => {
         align={TextAlign.Left}
         size={TextSize.S}
         className={styles.text}
-        text="С каждым днем мальчик Ваня становился смелее, а коробки — легче. Благодаря заботе родилей, поддержке и терпению ребенок смог преодолеть свои фобии и раскрыть свой потенциал!"
+        text="С каждым днем мальчик Ваня становился смелее, а коробки — легче. Благодаря заботе родителей, поддержке и терпению ребенок смог преодолеть свои фобии и раскрыть свой потенциал!"
       />
 
       <div className={styles.buttons}>
-        <Button size={ButtonSize.M} onClick={handleReastartGame} title="">
+        <Button size={ButtonSize.M} onClick={handleRestartGame} title="">
           Начать снова
         </Button>
 
