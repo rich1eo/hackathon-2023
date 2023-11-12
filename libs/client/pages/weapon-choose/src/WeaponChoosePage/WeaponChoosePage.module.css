@@ -1,0 +1,33 @@
+.WeaponChoosePage {
+  background: var(--color-violet);
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 3rem;
+}
+
+.header {
+  padding-bottom: 5rem;
+}
+
+.weaponChooseText {
+  margin-bottom: 5rem;
+}
+
+.weapons {
+  display: flex;
+  gap: 1.6rem;
+  margin-inline: auto;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.weaponCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}

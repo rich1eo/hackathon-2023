@@ -62,12 +62,22 @@
   background-color: var(--color-green);
 }
 
-.yellow {
-  background-color: var(--yellow-color);
+.orange {
+  background-color: var(--color-orange);
 
   &:hover,
   &:focus {
-    border-color: var(--yellow-color);
-    color: var(--yellow-color);
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+  }
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-yellow);
+    color: var(--color-yellow);
   }
 }

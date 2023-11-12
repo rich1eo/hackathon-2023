@@ -13,9 +13,11 @@
   --color-yellow: #fff7d0;
   --color-orange: #febd59;
   --color-green: #eceac1;
+  --color-green-800: #bbcb69;
 
   --border-color: #494949;
   --overlay-color: rgba(0 0 0 / 60%);
+  /* TODO: Убрать */
   --text-color: #7777;
   --yellow-color: #febd59;
 }

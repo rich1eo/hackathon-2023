@@ -9,6 +9,7 @@ export enum ButtonTheme {
   Primary = 'primary',
   Green = 'green',
   Yellow = 'yellow',
+  Orange = 'orange',
   Close = 'close',
 }
 
