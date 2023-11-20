@@ -16,7 +16,12 @@ export const FinishPage = () => {
   const handleRestartGame = useCallback(() => {
     setPoints(0)
     navigate('/game')
-  }, [navigate])
+  }, [navigate, setPoints])
+
+  const handleStartPage = useCallback(() => {
+    setPoints(0)
+    navigate('/')
+  }, [navigate, setPoints])
 
   const handleShare = useCallback(() => {
     navigate('/share')
@@ -47,7 +52,11 @@ export const FinishPage = () => {
       />
 
       <div className={styles.buttons}>
-        <Button size={ButtonSize.M} onClick={handleRestartGame} title="">
+        <Button theme={ButtonTheme.Green} size={ButtonSize.M} onClick={handleStartPage}>
+          На главную
+        </Button>
+
+        <Button size={ButtonSize.M} onClick={handleRestartGame}>
           Начать снова
         </Button>
 

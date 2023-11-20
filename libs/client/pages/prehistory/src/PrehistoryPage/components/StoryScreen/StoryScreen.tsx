@@ -6,6 +6,7 @@ import styles from './StoryScreen.module.css'
 
 interface StoryScreenProps {
   image: string
+  imgDescription: string
   text: string
   background: string
   onClickNextStep?: () => void
@@ -14,10 +15,18 @@ interface StoryScreenProps {
 }
 
 export const StoryScreen = memo(
-  ({ image, text, background, onClickNextStep, onClickPrevStep, nextButtonText = 'Далее' }: StoryScreenProps) => {
+  ({
+    image,
+    imgDescription,
+    text,
+    background,
+    onClickNextStep,
+    onClickPrevStep,
+    nextButtonText = 'Далее',
+  }: StoryScreenProps) => {
     return (
       <div style={{ backgroundColor: background }} className={styles.container}>
-        <img src={image} alt="image" className={styles.image} />
+        <img src={image} alt={imgDescription} className={styles.image} />
 
         <div className={styles.content}>
           <Text size={TextSize.S} theme={TextTheme.Inverted} text={text} className={styles.storyText} />

@@ -63,6 +63,7 @@
 .stopBtn {
   background: var(--yellow-color);
   border: 4px solid var(--border-color);
+  fill: var(--border-color);
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -75,6 +76,7 @@
   &:focus {
     border-color: var(--yellow-color);
     background: var(--border-color);
+    fill: var(--color-orange);
   }
 }
 

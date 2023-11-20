@@ -18,9 +18,9 @@ export const PrehistoryPage = memo(() => {
     setStoryStep((prev) => prev - 1)
   }, [])
 
-  const onWeaponChoosepage = useCallback(() => {
+  const onWeaponChoosePage = useCallback(() => {
     navigate('/weapon-choose')
-  }, [])
+  }, [navigate])
 
   const HistoryPart = useMemo(() => {
     switch (storyStep) {
@@ -29,7 +29,8 @@ export const PrehistoryPage = memo(() => {
           <StoryScreen
             onClickNextStep={onClickNextStep}
             image={firstImage}
-            text="Мария и Алексей долгие годы мечтали о ребенке. Наконец, они прошли школу приемных родителей и смоглить встретить свего сына, Ваню, в детском доме. День, когда они забрали его домой, был наполнен смехом и радостью. Ваня, мальчик с яркими глазами и застенчивой улыбкой, впервые чувствовал, что у него есть настоящая семья."
+            imgDescription="Семья с ребенком"
+            text="Мария и Алексей долгие годы мечтали о ребенке. Наконец, они прошли школу приемных родителей и смогли встретить своего сына, Ваню, в детском доме. День, когда они забрали его домой, был наполнен смехом и радостью. Ваня, мальчик с яркими глазами и застенчивой улыбкой, впервые чувствовал, что у него есть настоящая семья."
             background="var(--color-pink)"
           />
         )
@@ -38,6 +39,7 @@ export const PrehistoryPage = memo(() => {
           <StoryScreen
             onClickNextStep={onClickNextStep}
             image={secondImage}
+            imgDescription="Коробки"
             onClickPrevStep={onClickPrevStep}
             text='Вместе с сыном в их дом пришли его "коробки" - невидимые, но ощутимые. В каждой коробке были его страхи: страх темноты, страх одиночества и другие. Эти страхи часто заставляли мальчика прятаться в углах или плакать ночами. Мария и Алексей были озадачены, но не сдавались.'
             background="var(--color-green)"
@@ -46,9 +48,10 @@ export const PrehistoryPage = memo(() => {
       case 2:
         return (
           <StoryScreen
-            onClickNextStep={onWeaponChoosepage}
+            onClickNextStep={onWeaponChoosePage}
             onClickPrevStep={onClickPrevStep}
             image={thirdImage}
+            imgDescription="Родители в супергеройских костюмах"
             text="Родители поняли, что им нужно вооружиться необычным оружием: вниманием, заботой, пониманием и терпением. Они проводили время с сыном, читали ему сказки, объясняли, что бояться - это нормально, и что теперь он не один. Вооружитесь и вы этим оружием, чтобы помочь Ване победить его страхи."
             background="var(--color-pink)"
             nextButtonText="Начать"
@@ -59,13 +62,15 @@ export const PrehistoryPage = memo(() => {
           <StoryScreen
             onClickNextStep={onClickNextStep}
             image={firstImage}
-            text="Мария и Алексей долгие годы мечтали о ребенке. Наконец, они прошли школу приемных родителей и смоглить встретить свего сына, Ваню, в детском доме. День, когда они забрали его домой, был наполнен смехом и радостью. Ваня, мальчик с яркими глазами и застенчивой улыбкой, впервые чувствовал, что у него есть настоящая семья."
+            imgDescription="Семья с ребенком"
+            text="Мария и Алексей долгие годы мечтали о ребенке. Наконец, они прошли школу приемных родителей и смогли встретить своего сына, Ваню, в детском доме. День, когда они забрали его домой, был наполнен смехом и радостью. Ваня, мальчик с яркими глазами и застенчивой улыбкой, впервые чувствовал, что у него есть настоящая семья."
             background="var(--color-pink)"
           />
         )
     }
-  }, [storyStep])
-  return <>{HistoryPart}</>
+  }, [onClickNextStep, onClickPrevStep, onWeaponChoosePage, storyStep])
+
+  return HistoryPart
 })
 
 export default PrehistoryPage

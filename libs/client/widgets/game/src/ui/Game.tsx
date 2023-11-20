@@ -1,11 +1,10 @@
-import * as PIXI from 'pixi.js'
-import { memo, useMemo } from 'react'
+import { memo } from 'react'
 
 import { Enemy } from '@hackathon-2023/client/features/enemy'
 import { Weapon } from '@hackathon-2023/client/features/weapon'
 import { Text, TextSize } from '@hackathon-2023/client/uikit'
 import { Button, ButtonTheme } from '@hackathon-2023/client/uikit'
-import { Container, Stage } from '@pixi/react'
+import { Stage } from '@pixi/react'
 
 import { formatTime } from '../utils/format-time'
 

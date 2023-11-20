@@ -1,12 +1,12 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 
 import Close from '../../assets/close.svg'
+import Restart from '../../assets/restart.svg'
 import Share from '../../assets/share.svg'
+import Stop from '../../assets/stop.svg'
 import Telegram from '../../assets/telegram.svg'
 import Twitter from '../../assets/twitter.svg'
 import Vk from '../../assets/vk.svg'
-import Reastart from '../../assets/restart.svg'
-import Stop from '../../assets/stop.svg'
 import { classNames } from '../../lib/classNames/classNames'
 
 import styles from './Button.module.css'
@@ -83,7 +83,7 @@ export const Button = memo((props: ButtonProps) => {
   if (theme === ButtonTheme.Restart) {
     return (
       <button type="button" className={classNames(styles.restartBtn, {}, [className])} {...otherProps}>
-        <Reastart />
+        <Restart />
       </button>
     )
   }
